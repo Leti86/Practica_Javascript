@@ -10,23 +10,28 @@
 </head>
 
 <body>
-    <header>
-        <div id="iniciador">
-            <form action="">
-                <input type="text" id="añadidor_tarea" placeholder="introduce una tarea">
-                <select id="prioridad">
-                    <option value="-1" selected>Selecciona una prioridad</option>
-                    <option value="1">URGENTE</option>
-                    <option value="2">diaria</option>
-                    <option value="3">mensual</option>
-                </select>
-                <input type="submit" value="GUARDAR" id="btnGuardar">
-            </form>
-            <p>DEBES COMPLETAR TODOS LOS CAMPOS</p>
+    <div class="container">
 
-        </div>
+        <header>
+            <div id="iniciador">
+                <form action="">
+                    <input type="text" id="añadidor_tarea" placeholder="introduce una tarea">
+                    <select id="prioridad">
+                        <option value="-1" selected>Selecciona una prioridad</option>
+                        <option value="1">URGENTE</option>
+                        <option value="2">diaria</option>
+                        <option value="3">mensual</option>
+                    </select>
+                    <input type="submit" value="GUARDAR" id="btnGuardar">
+                </form>
+            </div>
+            <div class="alerta">
+                <p>DEBES COMPLETAR TODOS LOS CAMPOS</p>
+            </div>
+
+        </header>
         <main>
-            <div id="tareas">
+            <div id="filtro">
                 <select id="prioridad">
                     <option value="-1" selected>Selecciona una prioridad</option>
                     <option value="1">URGENTE</option>
@@ -35,10 +40,23 @@
                 </select>
                 <input type="text" id="buscador_tarea" placeholder="Tarea a buscar">
 
+            </div>
+            <div id="tareas">
+                <!-- <article>
+                    <div id="nombre_tarea">
+                        <h3>Estudiar Javascript</h3>
+                    </div>
+                    <div id="eliminar">
+                        <a href="">Eliminar</a>
+                    </div>
+                </article> -->
 
             </div>
+
         </main>
-    </header>
+    </div>
+
+
 
 
 
