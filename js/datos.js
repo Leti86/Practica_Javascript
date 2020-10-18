@@ -1,18 +1,23 @@
 const tareas = new Array(
     {
         idTarea: 1,
-        nombre: "barrer suselo",
+        nombre: "Barrer suselo",
         prioridad: "diaria"
     },
     {
         idTarea: 2,
-        nombre: "hacer compra",
+        nombre: "Hacer compra",
         prioridad: "URGENTE"
 
     },
     {
         idTarea: 3,
-        nombre: "pasar aspiradora",
+        nombre: "Pasar aspiradora",
+        prioridad: "semanal"
+    },
+    {
+        idTarea: 4,
+        nombre: "Regar las plantas",
         prioridad: "semanal"
     }
 

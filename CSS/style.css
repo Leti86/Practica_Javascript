@@ -7,7 +7,7 @@
 body .container{
     max-width: 800px;
     margin: 0 auto;
-    background-color: yellow;
+    background-color: turquoise;
 }
 
 header{    
@@ -51,6 +51,15 @@ main #tareas  article .nombre_tarea input{
     position: absolute;
     top: 0;
     right: 0;
+
+}
+header input{    
+     font-weight: 700; 
+ }
+
+main input{
+   margin-bottom: 20px;
+    font-weight: 700;
 
 }
 
