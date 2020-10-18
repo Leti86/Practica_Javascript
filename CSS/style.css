@@ -28,12 +28,31 @@ header .alerta p{
 main{    
     
     margin: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 20px;    
     
 
 }
 
+main #tareas{
+    margin: 20px;
+    padding: 10px;
 
+}
+
+main #tareas  article{
+    padding: 20px;
+    }
+
+main #tareas  article .nombre_tarea{
+    position: relative;
+}
+
+main #tareas  article .nombre_tarea input{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
 
 
 
