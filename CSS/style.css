@@ -63,6 +63,18 @@ main input{
 
 }
 
+.urgente{
+    background-color: red;
+}
+
+.diaria{
+    background-color: green;
+}
+
+.mensual{
+    background-color: orange;
+
+}
 
 
 

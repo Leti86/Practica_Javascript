@@ -7,18 +7,18 @@ const tareas = new Array(
     {
         idTarea: 2,
         nombre: "Hacer compra",
-        prioridad: "URGENTE"
+        prioridad: "urgente"
 
     },
     {
         idTarea: 3,
         nombre: "Pasar aspiradora",
-        prioridad: "semanal"
+        prioridad: "mensual"
     },
     {
         idTarea: 4,
         nombre: "Regar las plantas",
-        prioridad: "semanal"
+        prioridad: "mensual"
     }
 
 )

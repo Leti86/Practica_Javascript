@@ -6,27 +6,39 @@ pintarTareas(tareas, seccionTareas);
 
 /* Pintar nuevas tareas */
 
-let addTarea = document.getElementById('#addTarea');
+let anadirTarea = document.getElementById('addTarea');
 let prioridad = document.querySelector('#prioridad');
-let btnGuardar = document.getElementById('#btnGuardar');
+let btnGuardar = document.getElementById('btnGuardar');
+
 
 btnGuardar.addEventListener('click', guardarLaTarea);
 
 function guardarLaTarea(event) {
     event.preventDefault();
 
-    let innputTarea = addTarea.value.trim();
+    let innputTarea = anadirTarea.value.trim();
+
     let selectPrioridad = prioridad.value;
 
     if (innputTarea != "" && selectPrioridad != "-1") {
 
         addTarea(innputTarea, selectPrioridad);
+
     }
     else {
         alert('Los campos no pueden ser vacios)');
     }
 
-    addTarea.value = "";
-    prioridad.value = "-1";
+    /* addTarea.value = "";
+    prioridad.value = "-1"; */
 }
+
+
+
+
+
+
+
+
+
 
