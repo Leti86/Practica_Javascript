@@ -17,12 +17,13 @@ function guardarLaTarea(event) {
     event.preventDefault();
 
     let innputTarea = anadirTarea.value.trim();
-    console.log(innputTarea);
+
     let selectPrioridad = prioridad.value;
 
     if (innputTarea != "" && selectPrioridad != "-1") {
 
         addTarea(innputTarea, selectPrioridad);
+
     }
     else {
         alert('Los campos no pueden ser vacios)');
