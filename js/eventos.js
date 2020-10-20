@@ -27,8 +27,8 @@ function guardarLaTarea(event) {
     else {
         alert('Los campos no pueden ser vacios)');
     }
-    /* innputTarea = "";
-    selectPrioridad = "-1"; */
+    /*  innputTarea = "";
+     selectPrioridad = "-1"; */
 }
 
 /* Tareas pintadas - seleccionar por prioridades */
@@ -39,21 +39,30 @@ const prioridadesDeLasTareas = new Array();
 for (tarea of tareas) {
     prioridadesDeLasTareas.push(tarea.prioridad)
 } /* asi consigo un array con el tipo de proridades, pero estan duplicados */
+/* console.log(prioridadesDeLasTareas); OK*/
 
 let borradoPrioridadesRepetidas = new Set(prioridadesDeLasTareas);
-/* console.log(borradoPrioridadesRepetidas); OK */
+/* console.log(borradoPrioridadesRepetidas); */
 const listaPrioridades = Array.from(borradoPrioridadesRepetidas);
-/* console.log(listaPrioridades); OK */
+/* console.log(listaPrioridades); OK*/
 listaPrioridades.forEach(prioridad => {
-    selectPrioridad2.innerHTML += `<option value="${prioridad}">${prioridad}</option>`
-    /* console.log(listaPrioridades); */
+    listaPrioridades.innerHTML = `<option value="${prioridad}">${prioridad}</option>`
+    /* console.log(listaPrioridades); OK*/
 })
 
 //evento para capturar prioridad
 selectPrioridad2.addEventListener('change', event => {
-    pintarTareas(filtrarTareasPorPropiedad(tareas, event.target.value), seccionTareas)
 
+    let listaFiltradaPorPrioridades = filtrarTareasPorPropiedad(tareas, event.target.value);
+
+    console.log(listaFiltradaPorPrioridades);
+
+    /* (lispintarTareastaFiltradaPorPrioridades, seccionTareas);
+
+    console.log(pintarTareas); */
 })
+
+
 
 
 

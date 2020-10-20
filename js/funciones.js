@@ -56,11 +56,11 @@ function addTarea(pTarea, pPrioridad) {
 }
 
 function filtrarTareasPorPropiedad(pListaTareas, pPrioridad) {
+    let result = pListaTareas.filter(tarea =>
+        pPrioridad == tarea.prioridad
+    )
 
-    const resultado = pListaTareas.filter(tarea => tarea.prioridad.toLowerCase() == pPrioridad.toLowerCase());
+    return result;
 
-    /* console.log(resultado); // me da un array en lugar de la pPropiedad -> OK */
-
-    return resultado;
-
+    /* console.log(result);  OK */
 }
