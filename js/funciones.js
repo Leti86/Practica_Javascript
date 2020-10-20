@@ -29,17 +29,12 @@ function pintarUnaTarea(pTarea, pSeccion) {
     article.appendChild(div);
     seccionTareas.appendChild(article);
 
-
-
 }
 
 let id = 1;
 
-
 function addTarea(pTarea, pPrioridad) {
-    console.log(pPrioridad);
-
-
+    /* console.log(pPrioridad); */
     const newTarea = {
         idTarea: id,
         nombre: pTarea,
@@ -53,9 +48,19 @@ function addTarea(pTarea, pPrioridad) {
     if (existe == -1)/* porque la funcion findIndex me devulve la posicion (del duplicado) o un -1 si no lo encuentra(no habria duplicado) */ {
         tareas.push(newTarea);
         pintarUnaTarea(newTarea, seccionTareas);
-
         id++;
+
     } else {
         alert('tarea repetida')
     }
+}
+
+function filtrarTareasPorPropiedad(pListaTareas, pPrioridad) {
+
+    const resultado = pListaTareas.filter(tarea => tarea.prioridad.toLowerCase() == pPrioridad.toLowerCase());
+
+    /* console.log(resultado); // me da un array en lugar de la pPropiedad -> OK */
+
+    return resultado;
+
 }
