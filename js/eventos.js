@@ -2,6 +2,7 @@
 
 let seccionTareas = document.querySelector('#tareas');
 
+
 pintarTareas(tareas, seccionTareas);
 
 /* Pintar nuevas tareas */
@@ -22,14 +23,23 @@ function guardarLaTarea(event) {
     if (innputTarea != "" && selectPrioridad != "-1") {
 
         addTarea(innputTarea, selectPrioridad);
+
+        /* innputTarea.innerHTML = "";
+        selectPrioridad = "-1"; Esto no funciona?? */
     }
 
     else {
         alert('Los campos no pueden ser vacios)');
     }
-    /*  innputTarea = "";
-     selectPrioridad = "-1"; */
+
+
 }
+
+
+
+/* innputTarea.innerHTML = "";
+selectPrioridad = "-1";
+} */
 
 /* Tareas pintadas - seleccionar por prioridades */
 
@@ -53,13 +63,45 @@ listaPrioridades.forEach(prioridad => {
 //evento para capturar prioridad
 selectPrioridad2.addEventListener('change', event => {
 
-    let listaFiltradaPorPrioridades = filtrarTareasPorPropiedad(tareas, event.target.value);
+    let listaFiltradaPorPrioridades = filtrarTareasPorPrioridad(tareas, event.target.value);
 
     seccionTareas.innerHTML = "";
 
 
     pintarTareas(listaFiltradaPorPrioridades, seccionTareas);
 })
+
+/* Buscar tareas */
+
+let buscadorTarea = document.querySelector('#buscador_tarea');
+
+buscadorTarea.addEventListener('input', recogerBusqueda);
+
+function recogerBusqueda(event) {
+
+    let palabraABuscar = event.target.value;
+
+    let listaFiltradaPorPrioridades = buscarTarea(tareas, palabraABuscar);
+    pintarTareas(listaFiltradaPorPrioridades, seccionTareas);
+
+}
+
+
+/* Evento Boton eliminar */
+
+let btnEliminar = document.querySelector('#btnEliminar');
+
+buscadorTarea.addEventListener('click', event => {
+    let seccionUnaTarea = document.querySelector('#contenedor_tarea');
+    seccionUnaTarea.innerHTML = "";
+
+})
+
+
+
+
+
+
 
 
 

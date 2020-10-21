@@ -12,12 +12,15 @@ function pintarUnaTarea(pTarea, pSeccion) {
 
     let article = document.createElement('article');
     article.className = pTarea.prioridad;
+    article.classList.add('contenedor_tarea');
     let div = document.createElement('div');
     div.classList.add('nombre_tarea');
     let h3 = document.createElement('h3');
     let input = document.createElement('input');
     input.setAttribute("type", "button");
     input.value = "Eliminar";
+    input.classList.add('btnEliminar');
+
 
     //contenido div "nombre_tarea"
     let contenidoh3 = document.createTextNode(`${pTarea.nombre}`);
@@ -53,9 +56,11 @@ function addTarea(pTarea, pPrioridad) {
     } else {
         alert('tarea repetida')
     }
+
+
 }
 
-function filtrarTareasPorPropiedad(pListaTareas, pPrioridad) {
+function filtrarTareasPorPrioridad(pListaTareas, pPrioridad) {
     let result = pListaTareas.filter(tarea =>
         pPrioridad == tarea.prioridad
     )
@@ -64,3 +69,15 @@ function filtrarTareasPorPropiedad(pListaTareas, pPrioridad) {
 
     /* console.log(result);  OK */
 }
+
+function buscarTarea(pListaTareas, pPalabraBuscada) {
+    const listaFiltradaPorPalabra = pListaTareas.filter(tarea => {
+        tarea.nombre.toLowerCase().includes(pPalabraBuscada.toLowerCase());
+
+        return listaFiltradaPorPalabra;
+    })
+
+
+}
+
+
