@@ -55,11 +55,10 @@ selectPrioridad2.addEventListener('change', event => {
 
     let listaFiltradaPorPrioridades = filtrarTareasPorPropiedad(tareas, event.target.value);
 
-    console.log(listaFiltradaPorPrioridades);
+    seccionTareas.innerHTML = "";
 
-    /* (lispintarTareastaFiltradaPorPrioridades, seccionTareas);
 
-    console.log(pintarTareas); */
+    pintarTareas(listaFiltradaPorPrioridades, seccionTareas);
 })
 
 
