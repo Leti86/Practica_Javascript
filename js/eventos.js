@@ -5,6 +5,7 @@ let seccionTareas = document.querySelector('#tareas');
 
 pintarTareas(tareas, seccionTareas);
 
+
 /* Pintar nuevas tareas */
 
 let anadirTarea = document.getElementById('addTarea');
@@ -24,22 +25,17 @@ function guardarLaTarea(event) {
 
         addTarea(innputTarea, selectPrioridad);
 
-        /* innputTarea.innerHTML = "";
-        selectPrioridad = "-1"; Esto no funciona?? */
+
     }
 
     else {
         alert('Los campos no pueden ser vacios)');
     }
+    /* innputTarea.innerHTML = "";
+      selectPrioridad = "-1"; Esto no funciona?? */
 
 
 }
-
-
-
-/* innputTarea.innerHTML = "";
-selectPrioridad = "-1";
-} */
 
 /* Tareas pintadas - seleccionar por prioridades */
 
@@ -69,34 +65,56 @@ selectPrioridad2.addEventListener('change', event => {
 
 
     pintarTareas(listaFiltradaPorPrioridades, seccionTareas);
-})
+});
 
-/* Buscar tareas */
 
-let buscadorTarea = document.querySelector('#buscador_tarea');
+/* borrar tarea */
+
+function eliminarTarea(event) {
+    let id = event.parentNode.parentNode.dataset.id;
+    console.log(id);
+    eliminar(tareas, id);
+
+
+
+    pintarTareas(tareas, seccionTareas);
+
+}
+
+
+
+
+/* Buscar tareas
+
+let buscadorTarea = document.getElementById('buscador_tarea');
 
 buscadorTarea.addEventListener('input', recogerBusqueda);
 
 function recogerBusqueda(event) {
 
-    let palabraABuscar = event.target.value;
+    let palabraABuscar = event.target.value.trim();
 
-    let listaFiltradaPorPrioridades = buscarTarea(tareas, palabraABuscar);
-    pintarTareas(listaFiltradaPorPrioridades, seccionTareas);
+    console.log(palabraABuscar);
+
+    let listaTareaEncontrada = buscarTarea(tareas, palabraABuscar);
+    pintarTareas(listaTareaEncontrada, seccionTareas);
 
 }
-
-
-/* Evento Boton eliminar */
+  /* Evento Boton eliminar
 
 let btnEliminar = document.querySelector('#btnEliminar');
+let contenedorTarea = document.querySelector('#contenedor_tarea')
 
-buscadorTarea.addEventListener('click', event => {
-    let seccionUnaTarea = document.querySelector('#contenedor_tarea');
-    seccionUnaTarea.innerHTML = "";
 
-})
+btnEliminar.addEventListener('click', eliminarTarea);
 
+function eliminarTarea(event) {
+
+    let inputEliminar = contenedorTarea.value;
+
+    inputEliminar.innerHTML = "";
+
+}  */
 
 
 

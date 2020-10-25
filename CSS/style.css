@@ -39,25 +39,26 @@ main #tareas{
 
 }
 
-main #tareas  article{
+main #tareas  .contenedor_tarea{
     padding: 20px;
+    
     }
 
-main #tareas  article .nombre_tarea{
+main #tareas .nombre_tarea{
     position: relative;
+   
 }
-
-main #tareas  article .nombre_tarea input{
+main #tareas .nombre_tarea button{
     position: absolute;
     top: 0;
     right: 0;
 
 }
-header input{    
+header button{    
      font-weight: 700; 
  }
 
-main input{
+main button{
    margin-bottom: 20px;
     font-weight: 700;
 

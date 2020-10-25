@@ -1,13 +1,18 @@
 
 function pintarTareas(pListaTareas, pSeccion) {
 
-    /* pSeccion.innerText = ""; //para que solo me pinte la ultima lista con las tareas filtradas en otras funciones */
+    seccionTareas.innerHTML = "";
+
     pListaTareas.forEach(tarea => {
         pintarUnaTarea(tarea, pSeccion);
     })
+
+
 }
 
-function pintarUnaTarea(pTarea, pSeccion) {
+let id = 5;
+
+function pintarUnaTarea(pTarea) {
 
 
     let article = document.createElement('article');
@@ -15,18 +20,22 @@ function pintarUnaTarea(pTarea, pSeccion) {
     article.classList.add('contenedor_tarea');
     let div = document.createElement('div');
     div.classList.add('nombre_tarea');
+    div.dataset.id = pTarea.idTarea;
     let h3 = document.createElement('h3');
-    let input = document.createElement('input');
-    input.setAttribute("type", "button");
-    input.value = "Eliminar";
-    input.classList.add('btnEliminar');
+    let button = document.createElement('button');
+    button.setAttribute('onClick', 'eliminarTarea(this)');
+    button.value = "Eliminar";
+    button.classList.add('btnEliminar');
+    buttonText = document.createTextNode("Eliminar");
+    button.appendChild(buttonText);
+
 
 
     //contenido div "nombre_tarea"
     let contenidoh3 = document.createTextNode(`${pTarea.nombre}`);
     h3.appendChild(contenidoh3);
     div.appendChild(h3);
-    div.appendChild(input);
+    div.appendChild(button);
 
     // meto todo en el article
     article.appendChild(div);
@@ -34,7 +43,7 @@ function pintarUnaTarea(pTarea, pSeccion) {
 
 }
 
-let id = 1;
+
 
 function addTarea(pTarea, pPrioridad) {
     /* console.log(pPrioridad); */
@@ -48,7 +57,7 @@ function addTarea(pTarea, pPrioridad) {
         return tarea.nombre == pTarea && tarea.prioridad == pPrioridad
     })
 
-    if (existe == -1)/* porque la funcion findIndex me devulve la posicion (del duplicado) o un -1 si no lo encuentra(no habria duplicado) */ {
+    if (existe == -1) {
         tareas.push(newTarea);
         pintarUnaTarea(newTarea, seccionTareas);
         id++;
@@ -56,8 +65,6 @@ function addTarea(pTarea, pPrioridad) {
     } else {
         alert('tarea repetida')
     }
-
-
 }
 
 function filtrarTareasPorPrioridad(pListaTareas, pPrioridad) {
@@ -70,14 +77,28 @@ function filtrarTareasPorPrioridad(pListaTareas, pPrioridad) {
     /* console.log(result);  OK */
 }
 
-function buscarTarea(pListaTareas, pPalabraBuscada) {
-    const listaFiltradaPorPalabra = pListaTareas.filter(tarea => {
-        tarea.nombre.toLowerCase().includes(pPalabraBuscada.toLowerCase());
-
-        return listaFiltradaPorPalabra;
-    })
-
+function eliminar(pListaTareas, id) {
+    tareaParaEliminar = pListaTareas.findIndex(tarea => tarea.idTarea == id);
+    pListaTareas.splice(tareaParaEliminar, 1);
 
 }
+
+
+
+/* function buscarTarea(pListaTareas, pPalabraBuscada) {
+
+    let listaFiltradaPorPalabra = pListaTareas.filter(
+        tarea => {
+            tarea.nombre.toLowerCase().includes(pPalabraBuscada.toLowerCase());
+
+            return listaFiltradaPorPalabra;
+        }
+
+
+    )
+    //console.log(buscarTarea);
+}
+ */
+
 
 

@@ -1,7 +1,7 @@
 const tareas = new Array(
     {
         idTarea: 1,
-        nombre: "Barrer suselo",
+        nombre: "Barrer suelo",
         prioridad: "diaria"
     },
     {
