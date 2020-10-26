@@ -11,6 +11,8 @@ pintarTareas(tareas, seccionTareas);
 let anadirTarea = document.getElementById('addTarea');
 let prioridad = document.querySelector('#prioridad');
 let btnGuardar = document.getElementById('btnGuardar');
+let prioridadFiltrar = document.getElementById('prioridad_2')
+
 
 btnGuardar.addEventListener('click', guardarLaTarea);
 
@@ -25,14 +27,21 @@ function guardarLaTarea(event) {
 
         addTarea(innputTarea, selectPrioridad);
 
+        anadirTarea.value = "";
+        prioridad.value = "-1";
+
+
+
 
     }
 
     else {
         alert('Los campos no pueden ser vacios)');
+
+
+
     }
-    /* innputTarea.innerHTML = "";
-      selectPrioridad = "-1"; Esto no funciona?? */
+
 
 
 }
@@ -74,10 +83,21 @@ function eliminarTarea(event) {
     let id = event.parentNode.dataset.id;
     /* console.log(id); */
     eliminar(tareas, id);
+    if (prioridadFiltrar.value == '-1') {
+        pintarTareas(tareas, seccionTareas);
+    } else {
+        let listaFiltradaPorPrioridades = filtrarTareasPorPrioridad(tareas, prioridadFiltrar.value);
+
+        seccionTareas.innerHTML = "";
+
+
+        pintarTareas(listaFiltradaPorPrioridades, seccionTareas);
+
+    }
 
 
 
-    pintarTareas(tareas, seccionTareas);
+
 
 }
 
