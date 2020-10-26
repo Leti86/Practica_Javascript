@@ -85,20 +85,16 @@ function eliminar(pListaTareas, id) {
 
 
 
-/* function buscarTarea(pListaTareas, pPalabraBuscada) {
+function buscarTarea(pListaTareas, pPalabraBuscada) {
+
 
     let listaFiltradaPorPalabra = pListaTareas.filter(
         tarea => {
-            tarea.nombre.toLowerCase().includes(pPalabraBuscada.toLowerCase());
-
-            return listaFiltradaPorPalabra;
-        }
-
-
-    )
-    //console.log(buscarTarea);
+            return tarea.nombre.toLowerCase().includes(pPalabraBuscada.toLowerCase());
+        })
+    return listaFiltradaPorPalabra;
 }
- */
+
 
 
 

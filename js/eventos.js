@@ -71,8 +71,8 @@ selectPrioridad2.addEventListener('change', event => {
 /* borrar tarea */
 
 function eliminarTarea(event) {
-    let id = event.parentNode.parentNode.dataset.id;
-    console.log(id);
+    let id = event.parentNode.dataset.id;
+    /* console.log(id); */
     eliminar(tareas, id);
 
 
@@ -84,23 +84,25 @@ function eliminarTarea(event) {
 
 
 
-/* Buscar tareas
+/* Buscar tareas */
 
-let buscadorTarea = document.getElementById('buscador_tarea');
-
-buscadorTarea.addEventListener('input', recogerBusqueda);
+let buscador = document.querySelector('#buscador_tarea');
+buscador.addEventListener('input', recogerBusqueda);
 
 function recogerBusqueda(event) {
 
     let palabraABuscar = event.target.value.trim();
 
-    console.log(palabraABuscar);
+    /* console.log(palabraABuscar); OK*/
 
     let listaTareaEncontrada = buscarTarea(tareas, palabraABuscar);
+    /* console.log(listaTareaEncontrada); */
     pintarTareas(listaTareaEncontrada, seccionTareas);
 
 }
-  /* Evento Boton eliminar
+
+
+/* Evento Boton eliminar
 
 let btnEliminar = document.querySelector('#btnEliminar');
 let contenedorTarea = document.querySelector('#contenedor_tarea')
@@ -110,9 +112,9 @@ btnEliminar.addEventListener('click', eliminarTarea);
 
 function eliminarTarea(event) {
 
-    let inputEliminar = contenedorTarea.value;
+  let inputEliminar = contenedorTarea.value;
 
-    inputEliminar.innerHTML = "";
+  inputEliminar.innerHTML = "";
 
 }  */
 
